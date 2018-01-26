@@ -1,5 +1,5 @@
 ## Passing parameters to task
-_Instead of greeting the world, greet what/who you want by passing an argument_
+_Instead of greeting the world, greet what/who you want by passing a parameter_
 
 
 ### Add section in task that uses the passed argument or a default value if nothing is passed
