@@ -1,27 +1,24 @@
 # Task creation (basic)
 
-## Create a task called 'hello' that prints out 'Hello world'
+## Hello, world!
+
+Create a task called `hello` that prints `Hello, world!` when executed.
 
 - Run `gradle`
-- Q: Why did your 'hello' task run without explicitly executing it?
+- Q: Did Gradle print `Hello, world!`? If so, what went wrong?
+- Run `gradle hello`
+- Q: Was the output as expected?
 
-## Make the task run only when called
+## Task properties
 
-- Run `gradle`
-- Q: Was the task executed?
-    
 - Run `gradle tasks`
-- Q: Why does your task not show up in the list of available tasks?
+- Q: Is your task listed?
+- Q: Can you get `gradle tasks` to list it anyway?
 
-## Configure the group and description to your task
+Configure the group and description of your task.
 
 - Run `gradle tasks`
 - Q: Is your tasks visible and well defined?
-    
-## Execute your task
-
-- Run `gradle hello`
-- Q: Did it execute successfully?
 
 <br>
 <br>

@@ -23,4 +23,4 @@ Modify the `hello` task to greet the `recipients` parameter, or `"everyone"` if 
 <br>
 <br>
 
-_Recommended continuation: *task-dependencies*_
+_Recommended continuation: *task-types/basic*_

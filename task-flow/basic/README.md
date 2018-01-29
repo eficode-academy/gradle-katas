@@ -12,6 +12,7 @@ Make the `goodbye` task always run after the `hello` task in case both are execu
 
 Make the `hello` task always run before the `goodbye`, disregarding whether it was explicitly called or not.
 
+- Q: Which method did you use, and why?
 - Run `gradle goodbye`
 - Q: Was the output as expected? 
 
