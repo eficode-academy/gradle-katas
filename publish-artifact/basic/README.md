@@ -13,4 +13,4 @@
 - Q:
 
 ### Inside the publications closure, reference the zip task ( artifact <zipTask>)
-- Q: 
+- Q:

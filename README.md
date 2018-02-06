@@ -14,8 +14,8 @@ task-types - Experiment with built-in types and define custom re-usable types.
 
 Artifacts
 
-build-artifact - Creating an artifact
+create-artifact - Creating an artifact
 
 publish-artifact - How to share your artifact. Group, name and version practices.
 
-resolve-artifact - Define artifact as a dependecy.
+resolve-artifact - Compile code using the artifact as a dependency
