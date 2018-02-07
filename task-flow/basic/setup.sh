@@ -1,8 +1,6 @@
 #!/bin/bash
 
 read -d '' CONTENTS << EOF
-// task-flow-basic
-
 task 'hello' {
     group 'Conversation'
     description 'Prints a friendly greeting'
