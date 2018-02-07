@@ -11,4 +11,4 @@ task buildHeader() {
 EOF
 
 source ../../.shared/utils.sh
-initkata $CONTENTS
+initkata "$CONTENTS"

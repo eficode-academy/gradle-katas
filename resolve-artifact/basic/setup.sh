@@ -17,7 +17,7 @@ dependencies {
 EOF
 
 source ../../.shared/utils.sh
-initkata $CONTENTS
+initkata "$CONTENTS"
 
 touch main.c
 echo "#include <stdio.h>

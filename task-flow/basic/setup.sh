@@ -21,4 +21,4 @@ task 'goodbye' {
 EOF
 
 source ../../.shared/utils.sh
-initkata $CONTENTS
+initkata "$CONTENTS"
