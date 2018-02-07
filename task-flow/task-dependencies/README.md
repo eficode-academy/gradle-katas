@@ -1,9 +1,12 @@
-# Task dependencies
+# Task depencies
 
-Make the `hello` task always run before the `goodbye`, disregarding whether it was explicitly called or not.
+This exercise's `build.gradle` script contains `hello` and `goodbye` tasks.
 
-- Q: Which method did you use, and why?
+Configure the tasks so `hello` runs before_ the `goodbye` task, regardless of whether it was called or not.
+
+- Run `gradle goodbye hello`
+- Assert that they ran in the correct order (`hello` -> `goodbye`)
 - Run `gradle goodbye`
-- Q: Was the output as expected? 
+- Assert that `hello` runs
 
-_Recommended continuation: *task-parameters/basic*_
+_Recommended continuation: *task-flow/task-dependencies*_

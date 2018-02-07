@@ -1,9 +1,13 @@
 # Execution order
 
-Make the `goodbye` task always run after the `hello` task in case both are executed.
+This exercise's `build.gradle` script contains `hello` and `goodbye` tasks.
 
-- Q: Which method did you use, and why?
+Configure the tasks so `goodbye` runs _after_ the `hello` task.
+This is only in case both are explcitly called, avoid creating task execution dependencies.
+
+- Run `gradle goodbye hello`
+- Assert that they ran in the correct order (`hello` -> `goodbye`)
 - Run `gradle goodbye`
-- Q: Was the output as expected?
+- Assert that `hello` did _not_ run
 
 _Recommended continuation: *task-flow/task-dependencies*_
