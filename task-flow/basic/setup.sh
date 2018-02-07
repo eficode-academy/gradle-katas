@@ -1,6 +1,5 @@
 #!/bin/bash
 
-KATA="task-flow-basic"
 read -d '' CONTENTS << EOF
 // task-flow-basic
 
@@ -24,4 +23,4 @@ task 'goodbye' {
 EOF
 
 source ../../.shared/utils.sh
-initkata
+initkata $CONTENTS
