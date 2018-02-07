@@ -1,0 +1,29 @@
+ext.riskLevel = file('risk.txt').text as int
+
+task dangerousTask {
+    group "Dangerous"
+    description "Performs risky work on the reactor"
+
+    doLast {
+        // Assess the current risk level
+        println "\t Current risk level: $riskLevel"
+
+        // Calculate the increase in risk
+        def riskIncrease = new Random().nextInt(25) + 1
+        println "\t Risk level would increase by $riskIncrease"
+
+        // Perform the risky task
+        println "\t Performing dangerous task..."
+        riskLevel += riskIncrease
+        file('risk.txt').text = riskLevel
+        println "\t Risk level rose to $riskLevel!"
+        
+        // Explode
+        if (riskLevel > 100) {
+            println "\t Oh no! Risk level soared past 100!"
+            5.times {
+                println "\t !!! REACTOR OVERLOAD !!!"
+            }
+        }
+    }
+}
