@@ -3,7 +3,7 @@
 # Initializes a kata
 # $1 = kata build.gradle contents
 initkata() {
-    DIFFICULTY=$(dirname "$(readlink -fm "$0")")
+    DIFFICULTY=$(dirname "$(readlink -m "$0")")
     TOPIC=$(dirname $DIFFICULTY)
     KATA=$(basename $TOPIC)-$(basename $DIFFICULTY)
 
