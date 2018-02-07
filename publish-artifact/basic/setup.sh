@@ -20,10 +20,10 @@ task buildHeader() {
     group 'build'
     description 'builds a header file with author'
     doLast{
-        def author = 'whoami'.execute().text.trim()
-        def outputFolder = new File('output')
+        def author = System.getProperty('user.name')
+        def outputFolder = file('output')
         outputFolder.isDirectory() ?: outputFolder.mkdir()
-        def file = new File('output/author.h').text = '#define AUTHOR "' + author +'"'
+        def file = file('output/author.h').text = '#define AUTHOR "' + author +'"'
     }
 }
 EOF

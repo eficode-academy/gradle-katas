@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.praqma:myArtifact:0.0.1'
+    compile 'groupId:artifactId:versionId'
 }
 
 EOF
