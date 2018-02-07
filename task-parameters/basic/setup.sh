@@ -1,6 +1,5 @@
 #!/bin/bash
 
-KATA="task-parameters-basic"
 read -d '' CONTENTS << EOF
 // task-parameters-basic
 
@@ -15,4 +14,4 @@ task 'hello' {
 EOF
 
 source ../../.shared/utils.sh
-initkata
+initkata $CONTENTS

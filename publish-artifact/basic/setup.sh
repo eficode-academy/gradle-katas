@@ -1,6 +1,5 @@
 #!/bin/bash
 
-KATA="publish-artifact-basic"
 read -d '' CONTENTS << EOF
 publishing{
     publications {
@@ -29,4 +28,4 @@ task buildHeader() {
 EOF
 
 source ../../.shared/utils.sh
-initkata $KATA $CONTENTS
+initkata $CONTENTS

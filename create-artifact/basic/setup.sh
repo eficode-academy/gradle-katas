@@ -1,6 +1,5 @@
 #!/bin/bash
 
-KATA="create-artifact-basic"
 read -d '' CONTENTS << EOF
 // create-artifact-basic
 
@@ -14,4 +13,4 @@ task buildHeader() {
 EOF
 
 source ../../.shared/utils.sh
-initkata $KATA $CONTENTS
+initkata $CONTENTS

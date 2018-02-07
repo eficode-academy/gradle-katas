@@ -1,6 +1,5 @@
 #!/bin/bash
 
-KATA="resolve-artifact-basic"
 read -d '' CONTENTS << EOF
 apply plugin: 'maven-publish'
 
@@ -15,11 +14,10 @@ repositories {
 dependencies {
     compile 'groupId:artifactId:versionId'
 }
-
 EOF
 
 source ../../.shared/utils.sh
-initkata $KATA $CONTENTS
+initkata $CONTENTS
 
 touch main.c
 echo "#include <stdio.h>
