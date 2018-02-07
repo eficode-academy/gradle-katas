@@ -16,5 +16,5 @@
 - Q: When you execute the command 'gradle tasks', do new tasks show up?
 **Reference the zip task ( artifact <zipTask>)**
 - Q: What is happening here?
-**Define versionId, groupId and artifactId for your publication**
+**Define version, groupId and artifactId for your publication**
 - Q: When you execute 'gradle bH pTML', is your publication successful? 
