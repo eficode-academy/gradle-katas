@@ -11,8 +11,6 @@ Predict the outcome of the following commands:
 Run the commands and note the printed values.
  - Q: Did the output match your expectations? If not, what tripped you up?
 
-Either modify the `printTheValue` value task to lazily evaluate `theValue`, or redesign the tasks to avoid relying on execution-time knowledge during the configuration phase.
-
 <br />
 <br />
 
