@@ -1,28 +1,15 @@
-#Task types
+# Task types
 
-## Creating custom types
+## Using custom task types
 
-Are you familiar with the cowsay command line application?
+This exercise's `build.gradle` contains a custom task type, `Cowsay`.
 
-`cowsay Good morning!`
+Create a task using the `Cowsay` type.
 
-gives you something like this:
+- Run your task
+- Assert the output is adequately humorous
 
-```
-_________________ 
-< Good morning! >
------------------ 
-       \   ^__^
-        \  (oo)\_______
-           (__)\       )\/\
-               ||----w |
-               ||     ||
-               
-```
+Configure the inherited `message` property on your task, setting it to a value of your choice.
 
-- Add a task that inherits the method and property of the task type 'Cowsay'
-- Q: Execute the task, what was printed out?
-
-- Now add a personal greeting to the newly made task
-- Q: Did the cow provide you with the right greeting?
-
+- Run your task again
+- Assert the task now prints your custom message
