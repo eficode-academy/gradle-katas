@@ -5,15 +5,16 @@
 - Q: When typing the command 'gradle dependencies', can you see your artifact referenced
 
 ### Unpack file(s) from dependency
-**Create a task that unzip the dependency files into a lib folder**
+**Create a task that unzip the dependency files into the src folder**
 - __Hint: use ZipTree__
-- Q: main.c is looking for the author.h in a specific folder, did you get it right?
+- Q: main.c is looking for the author.h in the same folder as itself, did you get it right?
 
 ### Compile the c file
-**Create a task that compiles the main.c**
-- __Hint: use type: Exec__
-- Q: Did you produce an a.out file?
+**Apply the c plugin and use the provided build task**
+- Run `cat build/tmp/compileMainExecutableMainC/output.txt`
+- Q: Did it compile successfully?
 
 ### Add task dependency
 **Make the compile task dependent on the unpack task**
-- Q: When typing the command './a.out', was the output as expected?
+- Runt the command `./build/exe/main/main`
+- Q: Was the output as expected?

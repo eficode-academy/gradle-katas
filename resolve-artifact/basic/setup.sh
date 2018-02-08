@@ -2,6 +2,7 @@
 
 read -d '' CONTENTS << EOF
 apply plugin: 'maven-publish'
+apply plugin: 'c'
 
 configurations{
     compile
@@ -19,13 +20,14 @@ EOF
 source ../../.shared/utils.sh
 initkata "$CONTENTS"
 
-touch main.c
+mkdir -p src/main/c
+touch src/main/c/main.c
 echo "#include <stdio.h>
-#include \"lib/author.h\"
+#include \"author.h\"
 
 int main()
 {
   printf(\"Hello, %s!\n\", AUTHOR);
   return 0;
 }
-" >> main.c
+" >> src/main/c/main.c
