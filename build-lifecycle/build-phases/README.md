@@ -13,5 +13,7 @@ Run the commands and note the printed values.
 
 Either modify the `printTheValue` value task to lazily evaluate `theValue`, or redesign the tasks to avoid relying on execution-time knowledge during the configuration phase.
 
+<br />
+<br />
 
 _Recommended continuation: *TODO*_
