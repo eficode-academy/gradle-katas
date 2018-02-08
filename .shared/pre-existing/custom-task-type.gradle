@@ -1,0 +1,21 @@
+class Cowsay extends DefaultTask {
+    String greeting = 'This is a default message'
+    
+    @TaskAction
+    def cowsayout() {
+        println(
+        """
+            ${'_' * (greeting.length()+4)}
+            < $greeting >
+            ${'-' *(greeting.length()+4)}
+            \\
+                \\
+                ^__^
+                (oo)_______
+                (__)       )~~
+                    ||----w |
+                    ||     ||
+            """)
+    }
+}
+
