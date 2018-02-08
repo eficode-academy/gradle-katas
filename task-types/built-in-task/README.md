@@ -2,18 +2,22 @@
 
 ## Using built-in Types
 
-By referring to a task type in the task definition, you inherit the methods and properties of specific type.
+By referring to a task type in the task definition, you inherit properties and actions of that type.
 
 ### Zip
-- Create a task that gathers all .txt files and zip it up
-- Q: Did you manage to zip up all the .txt files?
+
+- Configure the placeholder `zipTask` task to zip up all the `.txt` files in the project directory
+- Run `gradle zipTask`
+- Assert the zip file contains all the `.txt` files
 
 ### Copy
-- Copy the zip file to a garbage folder
-- Q: Was the .zip file successfully copied?
+
+- Configure the placeholder `copyTask` task to copy the zip task made by `zipTask` to `archive/junk.zip`
+- Run `gradle copyTask`
+- Assert the zip file has been copied to an `archive` subdirectory
 
 ### Delete
-- Delete the .txt files and the original .zip file from the project root folder
-- Q: Was the files deleted?
 
-### Exec
+- Configure the placeholder `deleteTask` task to delete all `.txt` and `.zip` files from the project directory
+- Run `gradle deleteTask`
+- Assert the `.zip` and `.txt` files have been removed
