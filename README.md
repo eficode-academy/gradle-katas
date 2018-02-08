@@ -1,4 +1,8 @@
-# gradle-katas
+# Gradle-katas
+
+![alt-text](https://jaxenter.com/wp-content/uploads/2016/06/Screen-Shot-2016-06-06-at-2.56.13-PM.png "Gradle logo")
+
+Learn Gradle with these interactive katas.
 
 Tasks
 
@@ -6,7 +10,7 @@ Tasks
 
     task-parameters - Changing task output when passing parameters from command line
 
-    task-dependencies - Creating dependent tasks and ordered execution
+    task-flow - Creating dependent tasks and ordered execution
 
     task-types - Experiment with built-in types and define custom re-usable types.
 
