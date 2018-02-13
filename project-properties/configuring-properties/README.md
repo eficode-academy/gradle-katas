@@ -1,8 +1,8 @@
-# Task properties
+# Project properties
 
 ## Locally defined properties
 
-Add a `recipient` in the `build.gradle`.
+Add a `recipient` property in the `build.gradle`.
 
 Modify the `hello` task to greet the newly defined property
 

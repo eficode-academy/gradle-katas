@@ -5,7 +5,7 @@
 Create a task called `hello` that prints `Hello, world!` when executed.
 
 - Run `gradle`
-- Q: Did Gradle print `Hello, world!`? If so, what went wrong?
+- Q: Did Gradle print `Hello, world!`? If so, what happened?
 - Run `gradle hello`
 - Q: Was the output as expected?
 
