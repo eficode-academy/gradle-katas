@@ -2,11 +2,8 @@
 
 ## Locally defined properties
 
-<<<<<<< 591f831ee1d72d4b0ce6a029f068a4891eeb9447:project-properties/configuring-properties/README.md
-Add a `recipient` property in the `build.gradle`.
-=======
+
 Add a new `recipient` property variable with your name as the value in the `build.gradle`.
->>>>>>> made small hints to the kata:task-properties/configuring-properties/README.md
 
 Modify the `hello` task to greet the newly defined property
 
