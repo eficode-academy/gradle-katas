@@ -12,7 +12,7 @@ By referring to a task type in the task definition, you inherit properties and a
 
 ### Copy
 
-- Configure the placeholder `copyTask` task to copy the zip task made by `zipTask` to `archive/junk.zip`
+- Configure the placeholder `copyTask` task to copy the zip file made by `zipTask` to `archive/junk.zip`
 - Run `gradle copyTask`
 - Assert the zip file has been copied to an `archive` subdirectory
 
