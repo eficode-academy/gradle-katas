@@ -18,7 +18,7 @@ Create a task called `hello` that prints `Hello, world!` when executed.
 Configure the group and description of your task.
 
 - Run `gradle tasks`
-- Q: Is your tasks visible and well defined?
+- Q: Is your tasks visible and defined according to its purpose? 
 
 <br>
 <br>
