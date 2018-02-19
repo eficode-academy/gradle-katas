@@ -2,7 +2,6 @@
 
 read -d '' CONTENTS << EOF
 apply plugin: 'maven-publish'
-apply plugin: 'c'
 
 configurations{
     compile

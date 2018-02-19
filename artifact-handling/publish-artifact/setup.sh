@@ -5,10 +5,6 @@ publishing{
     publications {
         //insert magic
     }
-
-    repositories{
-        // insert magic
-    }
 }
 
 task bundleArtifact(type: Zip) {
