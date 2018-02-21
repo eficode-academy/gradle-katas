@@ -5,11 +5,11 @@ In order to use some predefined publishing task, you need a plugin
 
 - Apply the 'maven-publish' plugin
 - Run the command `gradle tasks`
-- Q: Did new publishing tasks appear?
+- Q: Did the new publishing tasks appear?
 
 ### Create zip task
 - Create a task that zips the author.h file
-- Q: Unzip the .zip file and verify the content
+- Q: Unzip the .zip file manually and verify the content
 
 ### Create a publication
 - Inside the publications closure, create a publication
