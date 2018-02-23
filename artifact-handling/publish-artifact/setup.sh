@@ -14,10 +14,9 @@ task bundleArtifact(type: Zip) {
 task buildHeader() {
     group 'build'
     description 'builds a header file with author'
+    outputs.file 'output/author.h'
     doLast{
         def author = System.getProperty('user.name')
-        def outputFolder = file('output')
-        outputFolder.isDirectory() ?: outputFolder.mkdir()
         def file = file('output/author.h').text = '#define AUTHOR "' + author +'"'
     }
 }

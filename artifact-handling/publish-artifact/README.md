@@ -15,9 +15,10 @@ In order to use some predefined publishing tasks, you need a dedicated plugin
 ### Create a publication
 - Inside the publications closure, create a publication
 - Reference the zip task to the artifact
-    - _Hint: artifact bundleArtifact)_
+    - _Hint: artifact bundleArtifact_
 - Q: What is happening here?
 - Define version, groupId and artifactId for your publication
-- Run the command `gradle bH pTML`
-- Q: is your publication successful?
+- Run the command `gradle buildHeader publishToMavenLocal`
+    - _Hint: use camelCaseNotation: gradle bH pTML_
+- Q: Was your publication successful?
     - _Hint: look inside your ~/.m2 folder_
