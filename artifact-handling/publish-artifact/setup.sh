@@ -7,9 +7,6 @@ publishing{
     }
 }
 
-task bundleArtifact(type: Zip) {
-    // insert magic
-}
 
 task buildHeader() {
     group 'build'
@@ -19,6 +16,10 @@ task buildHeader() {
         def author = System.getProperty('user.name')
         def file = file('output/author.h').text = '#define AUTHOR "' + author +'"'
     }
+}
+
+task bundleArtifact(type: Zip) {
+    // insert magic
 }
 EOF
 
