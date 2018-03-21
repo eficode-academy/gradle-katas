@@ -8,7 +8,6 @@ EOF
 source ../../.shared/utils.sh
 initkata "$CONTENTS"
 
-mkdir -p product/nimbus
 mkdir -p product/nimbus1000
 mkdir -p product/nimbus2000
-mkdir -p product/numbus9000x
+mkdir -p product/nimbus9000x
