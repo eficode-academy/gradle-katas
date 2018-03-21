@@ -16,7 +16,7 @@ dependencies {
 }
 EOF
 
-source ../../.shared/utils.sh
+source ../.shared/utils.sh
 initkata "$CONTENTS"
 
 mkdir -p src/main/c

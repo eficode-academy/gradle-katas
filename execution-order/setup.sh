@@ -4,7 +4,7 @@ read -d '' CONTENTS << EOF
 task 'hello' {
     group 'Conversation'
     description 'Prints a friendly greeting'
-    
+
     doLast {
         println 'Hey there!'
     }
@@ -20,5 +20,5 @@ task 'goodbye' {
 }
 EOF
 
-source ../../.shared/utils.sh
+source ../.shared/utils.sh
 initkata "$CONTENTS"

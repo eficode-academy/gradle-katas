@@ -23,5 +23,5 @@ task bundleArtifact(type: Zip) {
 }
 EOF
 
-source ../../.shared/utils.sh
+source ../.shared/utils.sh
 initkata "$CONTENTS"

@@ -42,7 +42,7 @@ task deleteTask (type: Delete){
 
 EOF
 
-source ../../.shared/utils.sh
+source ../.shared/utils.sh
 initkata "$CONTENTS"
 
 echo "junk1" > junk.txt

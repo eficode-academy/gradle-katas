@@ -15,7 +15,7 @@ task 'hello' {
 }
 EOF
 
-source ../../.shared/utils.sh
+source ../.shared/utils.sh
 initkata "$CONTENTS"
 
 touch gradle.properties
