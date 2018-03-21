@@ -1,0 +1,34 @@
+// ---
+// My tasks
+// ---
+
+
+
+
+// ---
+// Task types
+// ---
+
+/*
+* Cowsay task type
+* Prints a configurable message in an humorous fashion
+*/
+class Cowsay extends DefaultTask {
+    String message = 'This is a default message'
+
+    @TaskAction
+    def doMoo() {
+        println("""\
+             ${'_' * (message.length() + 2)}
+            < $message >
+             ${'-' * (message.length() + 4)}
+               \\
+                \\
+                ^__^
+                (oo)________
+                (__)        )~~
+                    ||----w-|
+                    ||     ||
+            """.stripIndent())
+    }
+}

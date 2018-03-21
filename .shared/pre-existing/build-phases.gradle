@@ -1,0 +1,19 @@
+ext.theValue = 100
+println 'Value set to 100'
+
+task 'setTheValue' {
+    group 'Value'
+    description 'Sets theValue to 500'
+
+    doLast {
+        theValue = 500
+        println 'Value set to 500'
+    }
+}
+
+task 'printTheValue' (type: Exec) {
+    group 'Value'
+    description 'Echos the value'
+
+    commandLine = ['echo', theValue]
+}
