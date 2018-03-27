@@ -1,4 +1,6 @@
-# Execution order
+# Task execution order
+
+## Configuring execuion order
 
 This exercise's `build.gradle` script contains `hello` and `goodbye` tasks.
 
@@ -9,5 +11,3 @@ This is only in case both are explcitly called, avoid creating task execution de
 - Assert that they ran in the correct order (`hello` -> `goodbye`)
 - Run `gradle goodbye`
 - Assert that `hello` did _not_ run
-
-_Recommended continuation: *task-flow/task-dependencies*_

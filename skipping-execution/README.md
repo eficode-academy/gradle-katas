@@ -11,5 +11,3 @@ However, do so without modifying existing lines of code.
 - Run `gradle dangerousTask` once more, for science
 - Q: Did your reactor overload? If so, what went wrong?
 - Q: What are the differences between `onlyIf`, `return`, `StopExecutionException`, `GradleException`? When would you use them?
-
-_Recommended continuation: *TODO*_

@@ -1,6 +1,6 @@
-# Task creation (basic)
+# Task creation
 
-## Hello, world!
+## Hello, world
 
 Create a task called `hello` that prints `Hello, world!` when executed.
 
@@ -20,8 +20,3 @@ Configure the group and description of your task.
 
 - Run `gradle tasks`
 - Q: Is your tasks visible and defined according to its purpose?
-
-<br>
-<br>
-
-_Recommended continuation: *task-flow/basic*_

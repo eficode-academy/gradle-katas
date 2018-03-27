@@ -1,7 +1,6 @@
-# Project properties
+# Configuring properties
 
 ## Locally defined properties
-
 
 Add a new `recipient` property with your name as the value in the `build.gradle`.
 
@@ -30,9 +29,4 @@ Call `gradle hello`, and pass in the `recipient` property through the command li
 
 > hint: You can create and overwrite properties from the command line with `-Pfoo=bar`
 
- - Assert your command line property overrides user and project property values
-
-<br>
-<br>
-
-_Recommended continuation: *task-properties/checking-properties*_
+- Assert your command line property overrides user and project property values

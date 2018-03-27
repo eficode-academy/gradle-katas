@@ -2,7 +2,7 @@
 
 ## Using built-in Types
 
-By referring to a task type in the task definition, you inherit properties and action objects of that type.
+By creating a task of a type, you inherit the properties and actions of that type.
 
 ### Zip
 
@@ -22,10 +22,6 @@ By referring to a task type in the task definition, you inherit properties and a
 - Run `gradle deleteTask`
 - Assert the `.zip` and `.txt` files have been removed
 
-### Exec (Create a exec task)
+### Exec
 
-> hint: you can make a deletion based on extensions by makeing a `filetree`:     
-delete fileTree('foo/bar') {
-        include '*.baz'
-        include '*.zz'
-    }
+- Create an `Exec` task that executes either `ls` or `dir`.
