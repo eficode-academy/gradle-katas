@@ -1,18 +1,11 @@
 # Task rules
 
- A flexible way of providing build support for a dynamic product
+The `product` directory contains some subdirectories representing product variations. Create a task rule that does the following:
 
-### Examine the product folder
- Each subfolder represent a variation within the product line
+- Pick up tasks that follow the `build_<product>` scheme, printing the name of the product
+- Throw an exception calls `build_<product>` with an invalid if the user tries to build a non existing product
 
-### Create a task rule
-- The task rule should follow these criterias:
-    - Detect every task that starts with the phrase _build_
-    - The task should throw an exception if the user tries to build a non existing product
-        - _Hint: use file('path').isDirectory()_
-    - Run the command `gradle buildNimbus2000` and `gradle buildNimbus4300`
-    - Q: Verify that the first build was successful and the second failed.
+_Hint_: Use `file('file/path').isDirectory()` to check if a path is a valid directory
 
-### Execute local build script
-    - In the execution phase, change the working directory to 'products/<id>'
-    and run the build file present in the directory.
+- Run `gradle buildNimbus2000` and `gradle buildNimbus4300`
+- Verify that the first build was successful and the second failed

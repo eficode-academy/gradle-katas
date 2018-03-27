@@ -8,8 +8,3 @@ Create a task for each `.txt` file in the `sources` directory that prints the co
 - Assert you have generated a task for all 7 files
 - Run one of your generated tasks
 - Assert the task prints the file's contents
-
-<br>
-<br>
-
-_Recommended continuation: *TODO*_

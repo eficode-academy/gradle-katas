@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile 'groupId:artifactId:version'
+    // declare dependencies here
 }
 EOF
 

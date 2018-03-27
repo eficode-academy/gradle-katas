@@ -7,17 +7,12 @@ Complete the following exercises without renaming either file.
 
 ## Builds with specific scripts
 
- - Use the `foo.gradle` script to run the `sayFoo` task.
- - Assert the task printed `foo`
+- Use the `foo.gradle` script to run the `sayFoo` task.
+- Assert the task printed `foo`
 
 ## Combining build scripts
 
 Modify the `foo.gradle` script to apply the `bar.gradle` script to its builds.
 
- - Use the `foo.gradle` script to run the `sayFoo` and `sayBar` tasks.
- - Assert the build printed `foo` and `bar`
-
-<br>
-<br>
-
-_Recommended continuation: *TODO*_
+- Use the `foo.gradle` script to run the `sayFoo` and `sayBar` tasks.
+- Assert the build printed `foo` and `bar`
