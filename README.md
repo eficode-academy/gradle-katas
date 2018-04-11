@@ -4,22 +4,46 @@
 
 Learn Gradle with these interactive katas.
 
-Tasks
+Task creation
+ - task-creation - Adding simple task and
 
-    add-task  - Adding simple task and configure lifecycle and properties
-
-    task-parameters - Changing task output when passing parameters from command line
-
-    task-flow - Creating dependent tasks and ordered execution
-
-    task-types - Experiment with built-in types and define custom re-usable types.
+ - build-phases - Creating dependent tasks and ordered execution
 
 
+Properties
+ - configuring-properties - Different ways of passing properties to the build
 
-Artifacts
+ - checking-properties - Verifying and using passed properties
 
-    create-artifact - Creating an artifact
+Task Flow
+ - task-execution-order - Instructing your tasks to run in certain order
 
-    publish-artifact - How to share your artifact. Group, name and version practices.
+ - task-dependencies - Creating a DAG (directed acyclic graph) out of your tasks
 
-    resolve-artifact - Compile code using the artifact as a dependency
+
+Skipping task
+ - incremental-tasks - Defining build-input and output
+
+ - skipping-execution - Conditional execution of tasks
+
+
+Task types
+ - built-in-task-types - Experiment with a variety of built-in types
+
+ - custom-task-types - Defining custom re-usable types.
+
+
+Plugin
+ - applying-plugins - Looking into available plugins
+
+
+Task tules
+ - task-rules - Dynamic task content
+
+
+Artifact handling
+ - create-artifact - Creating an artifact
+
+ - publish-artifact - How to share your artifact. Group, name and version practices.
+
+ - resolve-artifact - Compile code using the artifact as a dependency
