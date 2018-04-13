@@ -15,27 +15,18 @@ Example of zip:
 task zipTask (type: Zip){
     group 'Task type'
     description 'Inherits properties and execution logic from the Zip class'
-    doLast {
-
-    }
 
 }
 
 task copyTask (type: Copy){
     group 'Task type'
     description 'Inherits properties and execution logic from the Copy class'
-    doLast {
-
-    }
 
 }
 
 task deleteTask (type: Delete){
     group 'Task type'
     description 'Inherits properties and execution logic from the Delete class'
-    doLast{
-
-    }
 
 }
 
