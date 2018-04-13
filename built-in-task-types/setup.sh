@@ -30,6 +30,13 @@ task deleteTask (type: Delete){
 
 }
 
+task execTask (type: Exec) {
+    group 'Task type'
+    description 'Inherits properties and execution logic from the Exec class'
+
+}
+
+
 
 EOF
 
