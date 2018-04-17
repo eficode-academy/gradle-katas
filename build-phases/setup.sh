@@ -6,4 +6,4 @@ EOF
 source ../.shared/utils.sh
 initkata "$CONTENTS"
 
-cp ../../../.shared/pre-existing/build-phases.gradle build.gradle
+cp ../../.shared/pre-existing/build-phases.gradle build.gradle
