@@ -1,4 +1,4 @@
-# Task depencies
+# Task dependencies
 
 ## Configuring task dependencies
 
