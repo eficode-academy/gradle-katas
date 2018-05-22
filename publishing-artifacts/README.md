@@ -26,3 +26,8 @@ _Hint_: shorten long task names to make them easier to run:
 
 - `gradle pTML`
 - `gradle pubToMavLoc`
+
+--- Extra Credits ---
+- Create an implied task dependency from publish, via bundleArtifact, to buildHeader.
+- Bump the version of the the artifact. Re-publish and verify how it looks like in the .m2 repository
+- Append a new field to the pom file. (suggestion description: build time) Look for withXml syntax: https://docs.gradle.org/current/dsl/org.gradle.api.publish.maven.MavenPublication.html
