@@ -19,7 +19,7 @@ Look through Gradle plugin repositories for a plugin that can solve our problem:
 - Assert new tasks appear in your task list
 - Q: How did you apply your plugin? Are there other ways of doing so?
 
-## Configuring plugins
+## Configuring plugins    
 
 Configure the C plugin to build our executable using the [documentation](https://docs.gradle.org/current/userguide/native_software.html#sec:c_sources).
 

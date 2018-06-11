@@ -2,7 +2,7 @@
 
 ## Generating multiple tasks
 
-Create a task for each `.txt` file in the `sources` directory that prints the contents of the file.
+Create a task for each `.src` file in the `sources` directory that prints the contents of the file.
 
 - Run `gradle tasks`
 - Assert you have generated a task for all 7 files

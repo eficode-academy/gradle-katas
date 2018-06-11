@@ -11,10 +11,15 @@ publishing{
 task buildHeader() {
     group 'build'
     description 'builds a header file with author'
-    outputs.file 'output/author.h'
+
+    def author = System.getProperty('user.name')
+    def target = file('output/author.h')
+
+    inputs.property author, "author"
+    outputs.file target
+
     doLast{
-        def author = System.getProperty('user.name')
-        def file = file('output/author.h').text = '#define AUTHOR "' + author +'"'
+        target.text = '#define AUTHOR "' + author + '"'
     }
 }
 
