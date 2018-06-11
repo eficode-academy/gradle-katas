@@ -21,7 +21,8 @@ Look through Gradle plugin repositories for a plugin that can solve our problem:
 
 ## Configuring plugins    
 
-Configure the C plugin to build our executable using the [documentation](https://guides.gradle.org/building-c-executables/#layout).
+Configure the C plugin to build our executable using the [documentation](https://docs.gradle.org/current/userguide/native_software.html#sec:c_sources).
+
 
 The structure is as follows:
 
