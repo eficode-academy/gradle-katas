@@ -8,7 +8,7 @@ Example of zip:
     from ('.') {
         include build.gradle
     }
-    archiveName buildscript.zip
+    archiveName "buildscript.zip"
 
 */
 
