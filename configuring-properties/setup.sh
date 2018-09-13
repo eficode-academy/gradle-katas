@@ -1,9 +1,6 @@
 #!/bin/bash
 
 read -d '' CONTENTS << EOF
-/*
-
-*/
 
 task 'hello' {
     group 'Conversation'
