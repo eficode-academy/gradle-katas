@@ -1,0 +1,4 @@
+rootProject.name = 'root'
+
+include 'server-one'
+include 'server-two'

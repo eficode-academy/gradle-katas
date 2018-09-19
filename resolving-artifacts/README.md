@@ -5,7 +5,7 @@ In this exercise, we'll be pulling in the dependency we published in `publishing
 In the `build.gradle` script, the local Maven repository has been configured, as well as a `compile` configuration to define dependencies in.
 
 - Define your recently published artifact as a dependency
-- Run the command `gradle dependencies`
+- Run the command `./gradlew dependencies`
 - Assert you see your dependency referenced
 
 Up next we'll unpack our artifact and interact with its contents.
@@ -25,9 +25,9 @@ Up next we'll be setting up to use our header file.
         }
     }
 
-- Run `gradle tasks`
+- Run `./gradlew tasks`
 - Assert new build tasks are available
-- Run `gradle build`
+- Run `./gradlew build`
 - Q: Did it compile successfully?
 
 _Hint_: Look at `build/tmp/compileMainExecutableMainC/output.txt`
@@ -35,7 +35,7 @@ _Hint_: Look at `build/tmp/compileMainExecutableMainC/output.txt`
 Looks like we forgot to actually unpack our dependency.
 
 - Configure task dependencies correctly so our build depends on our `unpack` task
-- Run `gradle build`
+- Run `./gradlew build`
 - Assert everything ran well
 - Run `./build/exe/main/main`
 - Assert the program ran correctly

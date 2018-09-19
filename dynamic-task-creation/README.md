@@ -4,7 +4,7 @@
 
 Create a task for each `.src` file in the `sources` directory that prints the contents of the file.
 
-- Run `gradle tasks`
+- Run `./gradlew tasks`
 - Assert you have generated a task for all 7 files
 - Run one of your generated tasks
 - Assert the task prints the file's contents

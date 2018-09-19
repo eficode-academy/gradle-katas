@@ -1,0 +1,31 @@
+// build target, set with 'gradlew -Ptarget=<target>'
+ext.target = project.findProperty('target') ?: 'DEBUG'
+
+apply from: 'task-types.gradle'
+
+// Configure an 'info' task for all projects
+allprojects {
+    task 'info' {
+        group 'Demo'
+        description 'Prints project information'
+
+        doLast {
+            println "project: $project.name"
+        }
+    }
+}
+
+// Modify the subprojects' 'build' task
+subprojects {
+    // After the subprojects' configuration phase
+    afterEvaluate { project ->
+        if (target == "RELEASE") {
+            // Append behaviour to their build tasks
+            build {
+                doLast {
+                    println "[${target}] Release specific behaviour."
+                }
+            }
+        }
+    }
+}

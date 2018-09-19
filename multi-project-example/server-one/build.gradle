@@ -1,0 +1,15 @@
+task 'build' {
+    group 'Demo'
+    description "Builds ${project.name}"
+
+    doLast {
+        println "[${target}] Built ${project.name}"
+    }
+}
+
+task 'startServer' (type: StartServer) {
+    group 'Demo'
+    description 'Starts a server on port 8080'
+
+    port = 8080
+}

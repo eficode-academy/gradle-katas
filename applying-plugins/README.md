@@ -13,9 +13,9 @@ Look through Gradle plugin repositories for a plugin that can solve our problem:
 
 ## Applying plugins
 
-- Run `gradle tasks`
+- Run `./gradlew tasks`
 - Apply the plugin to your `build.gradle` build script
-- Run `gradle tasks`
+- Run `./gradlew tasks`
 - Assert new tasks appear in your task list
 - Q: How did you apply your plugin? Are there other ways of doing so?
 
@@ -32,7 +32,7 @@ The structure is as follows:
             ├── author.h
             └── main.c
 
-- Run `gradle build`
+- Run `./gradlew build`
 - Assert the executable was built and placed in `build/exe/main`
 - Run the `main` application
 - Assert you are greeted by the application

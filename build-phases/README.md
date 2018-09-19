@@ -9,8 +9,8 @@ The `build.gradle` script in this exercise contains a property and two tasks:
 
 Predict the outcome of the following commands:
 
-- `gradle printTheValue`
-- `gradle setTheValue printTheValue`
+- `./gradlew printTheValue`
+- `./gradlew setTheValue printTheValue`
 
 Run the commands and note the printed values.
 

@@ -1,0 +1,14 @@
+// Task type to start a server with a configurable port
+class StartServer extends DefaultTask {
+    int port = 0
+
+    @TaskAction
+    void doStart () {
+        println "Started server on port ${port}"
+    }
+}
+
+// Allows projects to create StartServer tasks
+// (Otherwise they'd complain about the
+//  StartServer property being missing.)
+ext.StartServer = StartServer.class

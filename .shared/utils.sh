@@ -3,11 +3,7 @@
 # Initializes a kata
 # $1 = kata build.gradle contents
 initkata() {
-    DIFFICULTY=$(dirname "$(readlink -m "$0")")
-    TOPIC=$(dirname $DIFFICULTY)
-    KATA=$(basename $TOPIC)-$(basename $DIFFICULTY)
-
-    echo "[KATA] Setting up the $KATA kata"
+    echo "[KATA] Setting up the kata"
     echo "[KATA] ------"
     echo "[KATA] "
 
@@ -18,8 +14,8 @@ initkata() {
     mkdir exercise
     cd exercise
     gradle -q init
-    echo "rootProject.name=\"$KATA\"" > settings.gradle
     echo "$1" > build.gradle
+
     echo "[KATA] Done!"
     echo "[KATA] "
     echo "[KATA] Don't forget to:"

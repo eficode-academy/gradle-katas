@@ -7,5 +7,5 @@ The `product` directory contains some subdirectories representing product variat
 
 _Hint_: Use `file('file/path').isDirectory()` to check if a path is a valid directory
 
-- Run `gradle buildNimbus2000` and `gradle buildNimbus4300`
+- Run `./gradlew buildNimbus2000` and `./gradlew buildNimbus4300`
 - Verify that the first build was successful and the second failed

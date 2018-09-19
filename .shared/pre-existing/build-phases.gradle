@@ -1,19 +1,25 @@
 ext.theValue = 100
-println 'Value set to 100'
+println "Value initialized as: ${theValue}"
 
 task 'setTheValue' {
     group 'Value'
-    description 'Sets theValue to 500'
+    description 'Doubles theValue'
+
+    def message = "theValue was doubled"
 
     doLast {
-        theValue = 500
-        println 'Value set to 500'
+        theValue = theValue * 2
+        println message
     }
 }
 
-task 'printTheValue' (type: Exec) {
+task 'printTheValue' {
     group 'Value'
-    description 'Echos the value'
+    description 'Prints the value'
 
-    commandLine = ['echo', theValue]
+    def message = "The value currently is: ${theValue}"
+
+    doLast {
+        println message
+    }
 }

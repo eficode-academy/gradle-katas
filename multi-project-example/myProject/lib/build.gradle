@@ -1,7 +1,0 @@
-task build() {
-    group 'build'
-    description 'building library'
-    doLast{
-	println "building library"
-    }
-}
