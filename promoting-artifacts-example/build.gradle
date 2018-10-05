@@ -1,0 +1,212 @@
+// --------------------
+// Plugins
+// --------------------
+
+plugins {
+   id "maven-publish"
+   id "com.jfrog.artifactory" version "4.7.2"
+}
+
+// --------------------
+// Defaults
+// --------------------
+
+defaultTasks 'artifactoryPromote'
+
+// --------------------
+// Input validation
+// --------------------
+
+/** Throws an exception if given property isn't set */
+void verifyPropertySet(String propertyName) {
+    if (project.findProperty(propertyName)) { return }
+    throw new GradleException("""\
+        Required property '${propertyName}' is missing or empty.
+        Add it to your ~/.gradle/gradle.properties file:
+            ${propertyName}=VALUE
+        Or pass it in when calling Gradle:
+            -P${propertyName}=VALUE
+        """.stripIndent())
+}
+
+verifyPropertySet('rtfUser')
+verifyPropertySet('rtfSecret')
+
+// --------------------
+// DEPENDENCIES
+// --------------------
+
+repositories {
+    maven {
+        url "${rtfUrl}/${rtfRepoKey}"
+        credentials {
+            username = rtfUser
+            password = rtfSecret
+        }
+    }
+}
+
+configurations {
+    promotable
+ }
+
+dependencies {
+   promotable 'net.praqma:foo:1.+'
+   promotable 'net.praqma:bar:1.+'
+}
+
+// --------------------
+// PROPERTIES
+// --------------------
+
+ext.unpromotedBuilds = [] // Used to keep track of builds to promote
+
+// --------------------
+// PROMOTION METHODS
+// --------------------
+
+/** Runs a command, returns its exit value **/
+int runCommand(String command) {
+  logger.info command
+  new ProcessBuilder(command.split(' ')).inheritIO().start().waitFor()
+}
+
+/** Prints a pretty summary of passed in builds */
+void printBuildSummary(Map dependencyBuilds) {
+    def summary = dependencyBuilds.collect { dependency, build ->
+        """
+        Dependency
+            ${dependency}
+        Latest build
+            ${build.name} (${build.number})
+        Promoted
+            ${build.promoted}
+        """
+    }.join('\n')
+
+    logger.lifecycle """\
+        -------------
+        Build summary
+        -------------\
+        ${summary}
+        -------------
+        """.stripIndent()
+}
+
+/** 
+* Fetches builds for a given dependency from Artifactory  
+**/
+Map fetchBuilds(Dependency dependency) {
+    // Write AQL payload to fetch builds
+    file('build/AQL.json').write """\
+        items.find({
+            "name": {"\$match" : "${dependency.moduleName}-${dependency.moduleVersion}.*"}
+        }).include("artifact","artifact.module","artifact.module.build")
+        """.stripIndent()
+
+    // curl Artifactory API w/ AQL payload
+    runCommand("curl -u $rtfUser:$rtfSecret -H content-type:text/plain --data-binary @build/AQL.json ${rtfUrl}/api/search/aql -o build/AQL.out")
+
+    // Parse JSON to a map
+    new groovy.json.JsonSlurper().parse(file('build/AQL.out'))
+}
+
+/** 
+* Fetches the latest build from parsed build JSON
+**/
+Map latestBuildOf(Map parsedJson) {
+    // Define a map to store our parsed builds in
+    def builds = []
+
+    // Iterate over the results, return a pretty map for each builds
+    parsedJson.results.each { result ->
+        builds += result.artifacts.modules.builds.flatten().collect { build ->
+            [
+                'name': build.'build.name',
+                'number': build.'build.number',
+                'promoted': result.repo == rtfPromoteKey ? 'Yes': 'No',
+                'date': Date.parse("yyyy-MM-dd'T'HH:mm:ss.SSSX", build.'build.created'),
+            ]
+        }
+    }
+
+    // Sort the parsed builds by date and return the latest
+    builds.sort { it.date }.last()
+}
+
+/**
+* Checks if any promotable dependencies' builds haven't been promoted yet 
+**/
+boolean anyUnpromotedBuilds() {
+    // Collect a map of each dependency and their latest build
+    def latestBuilds = configurations.promotable.resolvedConfiguration.firstLevelModuleDependencies.collectEntries { dependency ->
+        return [dependency.name, latestBuildOf(fetchBuilds(dependency))]
+    }
+
+    // Print a pretty summary
+    printBuildSummary(latestBuilds)
+    logger.lifecycle "Found ${unpromotedBuilds.size()} build(s) to test"
+
+    // Return if there are any unpromoted builds
+    return unpromotedBuilds.any()
+}
+
+/** 
+* Promotes a given build 
+**/
+void promoteBuild (Map build) {
+    logger.lifecycle "Promoting ${build.name}: ${build.number}"
+
+    // Write a promotion payload
+    file('build/promo.json').text = """\
+        {
+            "status" : "test",
+            "sourceRepo" : "${rtfPublishKey}",
+            "targetRepo" : "${rtfPromoteKey}",
+            "copy" : false,
+            "artifacts" : true,
+            "dependencies" : true,
+            "scopes" : [ "compile" ],
+            "properties" : {
+                "build.maturity" : [
+                    "test"
+                ]
+            }
+        }""".stripIndent()
+    
+    // curl the Artifactory API using our payload
+    runCommand("curl -u $rtfUser:$rtfSecret -X POST ${rtfUrl}/api/build/promote/${build.name}/${build.number} -H content-type:application/json --data-binary @promo.json")
+}
+
+// --------------------
+// TASKS
+// --------------------
+
+task test {
+    description 'Runs tests to check builds'
+    group 'Build promotion'
+
+    onlyIf { anyUnpromotedBuilds() }
+
+    doLast {
+        logger.lifecycle 'Running tests...'
+        if (Math.random() < 0.75) {
+            logger.lifecycle 'Tests passed.'
+        } else {
+            throw new GradleException('Tests failed!')
+        }
+    }
+}
+
+task artifactoryPromote {
+    description 'Promotes the builds tested dependencies'
+    group 'Build promotion'
+
+    dependsOn 'test'
+
+    doLast {
+        unpromotedBuilds.each { entry ->
+            promoteBuild(entry.value)
+        }
+    }
+}
