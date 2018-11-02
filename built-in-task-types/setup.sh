@@ -6,32 +6,32 @@ Available built-in types and documentation https://docs.gradle.org/current/javad
 
 Example of zip:
     from ('.') {
-        include build.gradle
+        include 'build.gradle'
     }
     archiveName "buildscript.zip"
 
 */
 
 task zipTask (type: Zip){
-    group 'Task type'
+    group 'cleanup'
     description 'Inherits properties and execution logic from the Zip class'
 
 }
 
 task copyTask (type: Copy){
-    group 'Task type'
+    group 'cleanup'
     description 'Inherits properties and execution logic from the Copy class'
 
 }
 
 task deleteTask (type: Delete){
-    group 'Task type'
+    group 'cleanup'
     description 'Inherits properties and execution logic from the Delete class'
 
 }
 
 task execTask (type: Exec) {
-    group 'Task type'
+    group 'cleanup'
     description 'Inherits properties and execution logic from the Exec class'
 
 }
