@@ -16,7 +16,7 @@ By creating a task of a type, you inherit the properties and actions of that typ
 
 [Copy docs](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Copy.html)
 
-- Configure the placeholder `copyTask` task to copy the zip file made by `zipTask` to `archive/junk.zip`
+- Configure the placeholder `copyTask` task to copy the zip file made by `zipTask` to the folder `archive`
 - Run `./gradlew copyTask`
 - Assert the zip file has been copied to an `archive` subdirectory
 
@@ -24,7 +24,7 @@ By creating a task of a type, you inherit the properties and actions of that typ
 
 [Delete docs](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Delete.html)
 
-- Configure the placeholder `deleteTask` task to delete all `.txt` and `.zip` files from the project directory
+- Configure the placeholder `deleteTask` task to delete all `.txt` and `.zip` files from the project root directory
 - Run `./gradlew deleteTask`
 - Assert the `.zip` and `.txt` files have been removed
 
