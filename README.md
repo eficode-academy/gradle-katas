@@ -2,7 +2,7 @@
 
 ![alt-text](https://jaxenter.com/wp-content/uploads/2016/06/Screen-Shot-2016-06-06-at-2.56.13-PM.png "Gradle logo")
 
-##Learn Gradle with these interactive katas.
+### Learn Gradle with these interactive katas
 
 Task creation
  - task-creation - Add a simple task and execute it
@@ -39,6 +39,7 @@ Plugin
 
 Task rules and dynamic tasks
  - task-rules - Dynamic task content
+
  - dynamic-task-creation
 
 
@@ -46,3 +47,6 @@ Artifact handling
  - publish-artifact - How to share your artifact. Group, name and version practices.
 
  - resolve-artifact - Compile code using the artifact as a dependency
+
+Extras
+ - promoting-artifacts-example

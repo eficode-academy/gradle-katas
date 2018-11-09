@@ -1,13 +1,14 @@
 # Configuring properties
 
-Modify the `hello` task to greet the newly defined property.
-
-## Property files
-
+## Properties file
 Create a new `./gradlew.properties` file in your Gradle user directory (`~/.gradle/`).
 
 - Run `./gradlew hello`
-- Assert the task now greets the `recipient` configured in the properties file
+- Assert that the task not greets the `recipient` configured in the properties file
+
+Change the hello task to greet the newly defined property
+> hint: `"hello" + $recipient`
+- Assert that the task greets the `recipient` configured in the properties file
 
 Add a `recipient` property to the `./gradlew.properties` file in the project directory.
 Set a different value for `recipient` in your user `./gradlew.properties`.
@@ -28,4 +29,4 @@ Call `./gradlew hello`, and pass in the `recipient` property through the command
 Set the `recipient` property to a new value in `build.gradle`.
 
 - Run `./gradlew hello`
-- Assert the task now greets your configured property
+- Assert the task greets your property defined in build.gradle
