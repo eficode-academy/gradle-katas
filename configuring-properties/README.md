@@ -1,7 +1,8 @@
 # Configuring properties
 
 ## Properties file
-Create a new `gradle.properties` file in your Gradle user directory (`~/.gradle/`).
+
+Create a new `gradle.properties` file in your Gradle user directory (`~/.gradle/`). Define the `recipient` property in this file.
 
 - Run `./gradlew hello`
 - Assert that the task not greets the `recipient` configured in the properties file
