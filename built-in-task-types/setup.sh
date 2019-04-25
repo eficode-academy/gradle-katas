@@ -1,6 +1,10 @@
 #!/bin/bash
 
 read -d '' CONTENTS << EOF
+plugins {
+    id "java"
+}
+
 /*
 Available built-in types and documentation https://docs.gradle.org/current/javadoc/org/gradle/api/Task.html
 
