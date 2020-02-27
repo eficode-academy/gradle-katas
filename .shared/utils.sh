@@ -12,7 +12,19 @@ create_exercise_dir() {
 }
 
 initialize_gradle_project() {
-    gradle -q init
+    # Gradle versions 5 and after queries the user for project type,
+    # dsl and project name on init, unless the values are provided as
+    # parameters. Earlier gradle versions do not support the parameters
+    # This check will ensure that the parameters are given when
+    # necessary
+    gradle_version=$(gradle --version | grep Gradle | awk '{print $2}')
+    gradle_version_less_than_5=$(echo $gradle_version'<'5 | bc -l )
+    if [[ $gradle_version_less_than_5 -eq 1 ]]
+    then
+        gradle -q init
+    else
+        gradle -q init --type basic --dsl groovy --project-name exercise
+    fi
 }
 
 print_header() {
