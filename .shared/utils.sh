@@ -12,14 +12,14 @@ create_exercise_dir() {
 }
 
 initialize_gradle_project() {
-    # Gradle versions 5 and after queries the user for project type,
+    # Gradle versions 5.1 and after queries the user for project type,
     # dsl and project name on init, unless the values are provided as
     # parameters. Earlier gradle versions do not support the parameters
     # This check will ensure that the parameters are given when
     # necessary
     gradle_version=$(gradle --version | grep Gradle | awk '{print $2}')
-    gradle_version_less_than_5=$(echo $gradle_version'<'5 | bc -l )
-    if [[ $gradle_version_less_than_5 -eq 1 ]]
+    gradle_version_less_than_5_1=$(bc -l <<< "$gradle_version<5.1")
+    if [[ $gradle_version_less_than_5_1 -eq 1 ]]
     then
         gradle -q init
     else
