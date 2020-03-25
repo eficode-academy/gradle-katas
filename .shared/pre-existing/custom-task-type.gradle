@@ -14,6 +14,7 @@
 * Prints a configurable message in an humorous fashion
 */
 class Cowsay extends DefaultTask {
+    @Input
     String message = 'This is a default message'
 
     @TaskAction
