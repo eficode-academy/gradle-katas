@@ -22,7 +22,7 @@ class Cowsay extends DefaultTask {
         println("""\
              ${'_' * (message.length() + 2)}
             < $message >
-             ${'-' * (message.length() + 4)}
+             ${'\u203E' * (message.length() + 2)}
                \\
                 \\
                 ^__^
