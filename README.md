@@ -46,6 +46,9 @@ Feel free to use these exercises, that's why they're public!
 
 ## Suggested Learning Path
 
+Setup
+ - [gradle-wrapper-basics](./gradle-wrapper-basics/README.md) - Use the gradle wrapper to ensure that the correct gradle version is used.
+
 Task creation
  - [task-creation](./task-creation/README.md) - Add a simple task and execute it
  - [build-phases](./build-phases/README.md) - Creating dependent tasks and ordered execution
