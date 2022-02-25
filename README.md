@@ -1,6 +1,6 @@
 # Gradle-katas
 
-![alt-text](https://jaxenter.com/wp-content/uploads/2016/06/Screen-Shot-2016-06-06-at-2.56.13-PM.png "Gradle logo")
+![alt-text](https://gradle.com/wp-content/themes/fuel/assets/img/branding/gradle-dark-green-primary.svg "Gradle logo")
 
 ## Quick start
 
