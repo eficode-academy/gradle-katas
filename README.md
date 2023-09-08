@@ -47,6 +47,7 @@ Feel free to use these exercises, that's why they're public!
 ## Suggested Learning Path
 
 Setup
+ - [project-init](./gradle-init/README.md) - Create a new gradle project
  - [gradle-wrapper-basics](./gradle-wrapper-basics/README.md) - Use the gradle wrapper to ensure that the correct gradle version is used.
 
 Task creation
